@@ -2,15 +2,14 @@ package com.jinminetics.cinegum.views.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -20,11 +19,7 @@ import com.google.android.gms.ads.AdView;
 import com.jinminetics.cinegum.R;
 import com.jinminetics.cinegum.utils.Admob;
 import com.jinminetics.cinegum.views.activities.EditProfileActivity;
-import com.jinminetics.cinegum.views.activities.LoginActivity;
-import com.jinminetics.cinegum.views.activities.RegisterActivity;
 import com.jinminetics.views.JTextView;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

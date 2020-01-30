@@ -6,18 +6,19 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import android.util.Log;
 
 import com.jinminetics.cinegum.utils.AppMethods;
 import com.jinminetics.cinegum.utils.MemoryLeakUtils;
 import com.jinminetics.cinegum.utils.StaticMethods;
 
+import androidx.multidex.MultiDexApplication;
 import okhttp3.OkHttpClient;
 
 
-public class CustomApplication extends Application {
+public class CustomApplication extends MultiDexApplication {
     private static final String TAG = "CustomApplication";
     public static Activity mActivity;
     public NetworkReceiver mNetworkReceiver;

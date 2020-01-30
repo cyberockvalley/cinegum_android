@@ -63,7 +63,7 @@
                     android:singleLine="true"
                     android:hint="@string/confirm_password"/>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="5dp"
@@ -80,7 +80,7 @@
                         android:background="@color/transparent"
                         android:text="@string/sign_up"
                         style="@style/FontNormal"/>
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
