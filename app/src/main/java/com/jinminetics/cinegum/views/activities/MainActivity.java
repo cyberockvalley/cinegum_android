@@ -13,6 +13,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.jinminetics.cinegum.R;
+import com.jinminetics.cinegum.utils.Admob;
 import com.jinminetics.cinegum.views.fragments.CustomFragment;
 import com.jinminetics.cinegum.views.fragments.HomeFragment;
 import com.jinminetics.cinegum.views.fragments.UploadFragment;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
+        Admob.getInstance(this);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
         init();
@@ -85,4 +87,26 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         currentFrag = index;
     }
 
+    @Override
+    protected void onResume() {
+        Admob.getInstance(this).getRewardedVideoAd().resume(this);
+        if(!Admob.getInstance(this).getRewardedVideoAd().isLoaded())
+            Admob.getInstance(this).loadRewardedVideoAd();
+
+        if(!Admob.getInstance(this).getWallAd().isLoaded())
+            Admob.getInstance(this).loadWallAd();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Admob.getInstance(this).getRewardedVideoAd().pause(this);
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Admob.getInstance(this).getRewardedVideoAd().destroy(this);
+        super.onDestroy();
+    }
 }

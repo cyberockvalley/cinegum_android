@@ -74,4 +74,6 @@
     <string name="yesterday_earnings">Yesterday Earnings</string>
     <string name="last_month_earnings">Last Month Earnings</string>
     <string name="total_payout">Total Payout</string>
+    <string name="message_after_admob_reward"><![CDATA[You\'ve earned %d more coins. Click <b>Watch Again</b> to earn another %d]]></string>
+    <string name="admob_videos_availability_message">Quick videos are available now. Click the Quick Video button to watch now</string>
 </resources>

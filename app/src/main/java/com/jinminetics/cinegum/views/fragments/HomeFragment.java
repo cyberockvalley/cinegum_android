@@ -7,6 +7,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -17,7 +20,9 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.jinminetics.cinegum.R;
+import com.jinminetics.cinegum.providers.App;
 import com.jinminetics.cinegum.utils.Admob;
+import com.jinminetics.cinegum.utils.StaticMethods;
 import com.jinminetics.cinegum.views.activities.EditProfileActivity;
 import com.jinminetics.views.JTextView;
 
@@ -87,5 +92,34 @@ public class HomeFragment extends CustomFragment implements View.OnClickListener
             mActivity.overridePendingTransition(R.anim.slide_in_from_right, R.anim.fade_out_scale);
             return;
         }
+
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.rate:
+                StaticMethods.rate(mContext);
+                return false;
+            case R.id.share:
+                StaticMethods.shareit(mContext);
+                return false;
+            case R.id.feedback:
+                StaticMethods.feedback(mContext);
+                return false;
+            case R.id.contactUs:
+                StaticMethods.contactUs(mContext);
+                return false;
+            case R.id.logout:
+                App.getInstance(mContext).logout();
+                return false;
+        }
+        return true;
     }
 }

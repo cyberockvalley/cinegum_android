@@ -1,16 +1,24 @@
 package com.jinminetics.cinegum.views.fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.jinminetics.cinegum.R;
+import com.jinminetics.cinegum.utils.Admob;
+import com.jinminetics.cinegum.utils.StaticMethods;
+import com.jinminetics.views.JTextView;
 
-public class VideosFragment extends CustomFragment {
+public class VideosFragment extends CustomFragment implements View.OnClickListener {
     private static final String TAG = VideosFragment.class.getSimpleName();
+    private JTextView mQuickVideo;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,5 +37,57 @@ public class VideosFragment extends CustomFragment {
     @Override
     public void init() {
         super.init();
+        mQuickVideo = findViewById(R.id.quickVideo);
+        mQuickVideo.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Admob.getInstance(mContext).showWallAd(new Admob.AdListener() {
+            @Override
+            public void onAvailable() {
+
+            }
+
+            @Override
+            public void onEmpty() {
+                StaticMethods.showSnackbar(mActivity, "No video available now. Try later.", Snackbar.LENGTH_LONG);
+            }
+        });
+    }
+
+    private void showRewardVideo() {
+        Admob.getInstance(mContext).showRewardVideoAd(new Admob.RewardAdListener() {
+            @Override
+            public void onRewarded(int reward) {
+                StaticMethods.showAlert(mActivity, null, String.format(getString(R.string.message_after_admob_reward), reward, reward),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                showRewardVideo();
+                            }
+                        });
+            }
+
+            @Override
+            public void onAvailable() {
+                StaticMethods.showSnackbar(mActivity, getString(R.string.admob_videos_availability_message), Snackbar.LENGTH_LONG);
+            }
+
+            @Override
+            public void onEmpty() {
+
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View v) {
+        v.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.image_click));
+        if(v == mQuickVideo) {
+            showRewardVideo();
+        }
     }
 }
