@@ -69,4 +69,9 @@
     <string name="new_password">New password</string>
     <string name="confirm_new_password">Confirm new password</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="total_earnings">Total Earnings</string>
+    <string name="today_earnings">Today Earnings</string>
+    <string name="yesterday_earnings">Yesterday Earnings</string>
+    <string name="last_month_earnings">Last Month Earnings</string>
+    <string name="total_payout">Total Payout</string>
 </resources>

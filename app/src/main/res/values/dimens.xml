@@ -24,4 +24,5 @@
     <dimen name="poster_thumb_size">60dp</dimen>
     <dimen name="commentator_thumb_size">50dp</dimen>
     <dimen name="mr_reply_thumb_size">40dp</dimen>
+    <dimen name="earnings_margin_vr">12dp</dimen>
 </resources>

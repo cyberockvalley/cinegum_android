@@ -62,7 +62,7 @@ public class HomeFragment extends CustomFragment implements View.OnClickListener
         mEditProfile.setOnClickListener(this);
         mAdmobBannerContainer = findViewById(R.id.admobBannerContainer);
         admobBanner = new AdView(mContext);
-        admobBanner.setAdSize(Admob.BANNER_SIZE_320_BY_100);
+        admobBanner.setAdSize(Admob.BANNER_SIZE_320_BY_50);
         admobBanner.setAdUnitId(Admob.BANNER_1_UNIT_ID);
         mAdmobBannerContainer.addView(admobBanner);
         admobBanner.setAdListener(new AdListener() {

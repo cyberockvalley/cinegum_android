@@ -76,13 +76,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/div1"
-        android:padding="10dp"
+        android:padding="8dp"
         android:layout_gravity="center_horizontal"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/admobBannerContainer"
-        android:layout_marginBottom="70dp">
+        android:paddingBottom="56dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -90,25 +90,132 @@
             android:padding="10dp">
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/grey_earnings"
-                app:cardCornerRadius="4dp">
-                <LinearLayout
+                app:cardCornerRadius="4dp"
+                android:layout_marginBottom="@dimen/earnings_margin_vr">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Earnings"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
+                    <com.jinminetics.views.JTextView
+                        android:id="@+id/earnings_title_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_earnings"
+                        style="@style/Earnings.Title"/>
                     <com.jinminetics.views.JTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total Earnings"
+                        android:text="230 coins"
+                        style="@style/Earnings.Value"
+                        android:layout_below="@id/earnings_title_1"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/grey_earnings"
+                app:cardCornerRadius="4dp"
+                android:layout_marginBottom="@dimen/earnings_margin_vr">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Earnings"
+                    android:orientation="horizontal">
+                    <com.jinminetics.views.JTextView
+                        android:id="@+id/earnings_title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/today_earnings"
                         style="@style/Earnings.Title"/>
                     <com.jinminetics.views.JTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="23 coins"
-                        style="@style/Earnings.Value"/>
-                </LinearLayout>
+                        style="@style/Earnings.Value"
+                        android:layout_below="@id/earnings_title_2"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/grey_earnings"
+                app:cardCornerRadius="4dp"
+                android:layout_marginBottom="@dimen/earnings_margin_vr">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Earnings"
+                    android:orientation="horizontal">
+                    <com.jinminetics.views.JTextView
+                        android:id="@+id/earnings_title_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yesterday_earnings"
+                        style="@style/Earnings.Title"/>
+                    <com.jinminetics.views.JTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="57 coins"
+                        style="@style/Earnings.Value"
+                        android:layout_below="@id/earnings_title_3"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/grey_earnings"
+                app:cardCornerRadius="4dp"
+                android:layout_marginBottom="@dimen/earnings_margin_vr">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Earnings"
+                    android:orientation="horizontal">
+                    <com.jinminetics.views.JTextView
+                        android:id="@+id/earnings_title_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/last_month_earnings"
+                        style="@style/Earnings.Title"/>
+                    <com.jinminetics.views.JTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2,633 coins"
+                        style="@style/Earnings.Value"
+                        android:layout_below="@id/earnings_title_4"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/grey_earnings"
+                app:cardCornerRadius="4dp"
+                android:layout_marginBottom="@dimen/earnings_margin_vr">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Earnings"
+                    android:orientation="horizontal">
+                    <com.jinminetics.views.JTextView
+                        android:id="@+id/earnings_title_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_payout"
+                        style="@style/Earnings.Title"/>
+                    <com.jinminetics.views.JTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="49,633 coins"
+                        style="@style/Earnings.Value"
+                        android:layout_below="@id/earnings_title_5"/>
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
