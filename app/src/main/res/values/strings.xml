@@ -5,6 +5,9 @@
     <string name="title_add">Add</string>
     <string name="title_profile">Profile</string>
 
+    <string name="admob_app_id">ca-app-pub-9647365096448221~8136710741</string>
+    <string name="admob_app_id_sample">ca-app-pub-3940256099942544~3347511713</string>
+
 
     <string name="fontNexaLight">NexaLight.otf</string>
 
