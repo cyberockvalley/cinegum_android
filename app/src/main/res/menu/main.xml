@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/rate" android:title="@string/menu_rate_us" />
+    <item android:id="@+id/share" android:title="@string/menu_share_the_app"
+        android:icon="@drawable/ic_share_black_24dp"
+        app:showAsAction="always"/>
+    <item android:id="@+id/feedback" android:title="@string/menu_feedback" />
+    <item
+        android:id="@+id/aboutUs"
+        android:title="@string/menu_contact_us" />
+    <item
+        android:id="@+id/contactUs"
+        android:title="@string/menu_contact_us" />
+    <item android:id="@+id/logout" android:title="@string/menu_log_out" />
+</menu>

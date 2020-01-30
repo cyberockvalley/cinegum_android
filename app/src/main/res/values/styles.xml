@@ -1,0 +1,153 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+
+        <item name="actionOverflowButtonStyle">@style/BlackOnWhiteToolbarButtonStyle</item>
+    </style>
+
+    <style name="BlackOnWhiteToolbarButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/black</item>
+    </style>
+
+    <style name="AppTextLogo">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_margin">@dimen/activity_vertical_margin</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="fontFace">@string/fontBillABong</item>
+    </style>
+
+    <style name="AppTextToolbarLogo">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_margin">@dimen/activity_vertical_margin</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="fontFace">@string/fontBillABong</item>
+    </style>
+
+    <style name="FontNormal">
+        <item name="fontFace">@string/fontProxima</item>
+    </style>
+
+    <style name="FontBold">
+        <item name="fontFace">@string/fontProximaBold</item>
+    </style>
+
+    <style name="FontExtraBold">
+        <item name="fontFace">@string/fontProximaExtraBold</item>
+    </style>
+
+    <style name="FontItalic">
+        <item name="fontFace">@string/fontProxima</item>
+    </style>
+
+    <style name="FontThin">
+        <item name="fontFace">@string/fontProximaThin</item>
+    </style>
+
+    <style name="FontLight">
+        <item name="fontFace">@string/fontProximaAltLight</item>
+    </style>
+
+    <style name="FormTextInput">
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/form_text_input</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFace">@string/fontProxima</item>
+    </style>
+
+    <style name="Earnings">
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFace">@string/fontProxima</item>
+    </style>
+
+    <style name="Earnings.Title">
+        <item name="android:textSize">@dimen/h2</item>
+    </style>
+
+    <style name="Earnings.Value">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="fontFace">@string/fontProxima</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFace">@string/fontProxima</item>
+    </style>
+
+    <style name="Button.Small">
+        <item name="android:textSize">@dimen/small_button_text</item>
+    </style>
+
+    <style name="Button.Medium">
+        <item name="android:textSize">@dimen/medium_button_text</item>
+    </style>
+
+    <style name="Button.Large">
+        <item name="android:textSize">@dimen/large_button_text</item>
+    </style>
+
+    <style name="Button.Round">
+        <!--<item name="android:textColor">@color/colorPrimaryText</item>-->
+        <item name="android:background">@drawable/round_app_button</item>
+        <item name="android:textSize">@dimen/small_button_text</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="Button.Edit">
+        <!--<item name="android:textColor">@color/colorPrimaryText</item>-->
+        <item name="android:background">@drawable/edit_button</item>
+        <item name="android:textSize">@dimen/small_button_text</item>
+    </style>
+
+    <style name="Button.Round.Accent">
+        <!--<item name="android:textColor">@color/colorPrimaryText</item>-->
+        <item name="android:background">@drawable/round_app_button_accent</item>
+        <item name="android:textSize">@dimen/small_button_text</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ShotView">
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="ShotViewItem">
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="ShotViewItem.Caption">
+        <item name="android:textSize">@dimen/h4</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ShotViewItem.PostFooter">
+        <item name="android:textSize">@dimen/h5</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="ShotViewItem.CommentBox">
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

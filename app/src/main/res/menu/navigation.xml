@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_videos"
+        android:icon="@drawable/ic_ondemand_video_black_24dp"
+        android:title="@string/videos" />
+
+    <item
+        android:id="@+id/navigation_upload"
+        android:icon="@drawable/ic_file_upload_black_24dp"
+        android:title="@string/upload" />
+
+    <item
+        android:id="@+id/navigation_withdraw"
+        android:icon="@drawable/ic_account_balance_black_24dp"
+        android:title="@string/withdraw" />
+
+</menu>
