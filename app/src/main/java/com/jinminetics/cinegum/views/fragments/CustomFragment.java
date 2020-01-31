@@ -7,9 +7,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jinminetics.cinegum.R;
+import com.jinminetics.cinegum.providers.App;
+import com.jinminetics.cinegum.utils.StaticMethods;
+import com.jinminetics.cinegum.views.activities.AboutUs;
 import com.jinminetics.cinegum.views.activities.MainActivity;
 
 public abstract class CustomFragment extends Fragment {
@@ -37,6 +44,8 @@ public abstract class CustomFragment extends Fragment {
         this.fragVisible = fragVisible;
     }
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -61,6 +70,39 @@ public abstract class CustomFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.rate:
+                StaticMethods.rate(mContext);
+                return false;
+            case R.id.share:
+                StaticMethods.shareit(mContext);
+                return false;
+            case R.id.feedback:
+                StaticMethods.feedback(mContext);
+                return false;
+            case R.id.aboutUs:
+                StaticMethods.goTo(mContext, AboutUs.class, false);
+                return false;
+            case R.id.contactUs:
+                StaticMethods.contactUs(mContext);
+                return false;
+            case R.id.logout:
+                App.getInstance(mContext).logout();
+                return false;
+
+        }
+        return true;
     }
 
     @Override

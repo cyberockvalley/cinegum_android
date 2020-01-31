@@ -23,6 +23,7 @@ import com.jinminetics.cinegum.R;
 import com.jinminetics.cinegum.providers.App;
 import com.jinminetics.cinegum.utils.Admob;
 import com.jinminetics.cinegum.utils.StaticMethods;
+import com.jinminetics.cinegum.views.activities.AboutUs;
 import com.jinminetics.cinegum.views.activities.EditProfileActivity;
 import com.jinminetics.views.JTextView;
 
@@ -37,12 +38,6 @@ public class HomeFragment extends CustomFragment implements View.OnClickListener
     private LinearLayout mAdmobBannerContainer;
 
     private AdView admobBanner;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
 
     @Nullable
     @Override
@@ -93,33 +88,5 @@ public class HomeFragment extends CustomFragment implements View.OnClickListener
             return;
         }
 
-    }
-
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.main, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.rate:
-                StaticMethods.rate(mContext);
-                return false;
-            case R.id.share:
-                StaticMethods.shareit(mContext);
-                return false;
-            case R.id.feedback:
-                StaticMethods.feedback(mContext);
-                return false;
-            case R.id.contactUs:
-                StaticMethods.contactUs(mContext);
-                return false;
-            case R.id.logout:
-                App.getInstance(mContext).logout();
-                return false;
-        }
-        return true;
     }
 }

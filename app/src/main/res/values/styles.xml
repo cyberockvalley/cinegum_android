@@ -28,10 +28,19 @@
     <style name="AppTextToolbarLogo">
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_margin">@dimen/activity_vertical_margin</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">@dimen/h2</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:text">@string/app_name</item>
         <item name="fontFace">@string/fontBillABong</item>
+    </style>
+
+    <style name="ToolbarCenterText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="fontFace">@string/fontProxima</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="FontNormal">

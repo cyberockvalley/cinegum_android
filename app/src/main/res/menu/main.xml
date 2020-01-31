@@ -8,7 +8,7 @@
     <item android:id="@+id/feedback" android:title="@string/menu_feedback" />
     <item
         android:id="@+id/aboutUs"
-        android:title="@string/menu_contact_us" />
+        android:title="@string/menu_about_us" />
     <item
         android:id="@+id/contactUs"
         android:title="@string/menu_contact_us" />

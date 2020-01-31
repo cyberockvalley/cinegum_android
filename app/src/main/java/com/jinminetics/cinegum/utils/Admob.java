@@ -39,13 +39,12 @@ public class Admob {
     private static Admob instance;
     private InterstitialAd wallAd;
     private RewardedVideoAd rewardedVideoAd;
-    private RewardAdListener rewardedVideoAdListener;
     private long MINIMUM_TIME_ELAPSED_BEFORE_RETRY = 20 * 1000;
 
     private long lastWallAdDisplayTime;
 
     private AdListener wallAdListener;
-    private RewardAdListener rewardAdListener;
+    private RewardAdListener rewardedVideoAdListener;
     private AtomicBoolean alertOnRewardVideoAvailable = new AtomicBoolean(false);
     private AtomicBoolean alertOnWallAdAvailable = new AtomicBoolean(false);
 
@@ -114,7 +113,7 @@ public class Admob {
 
     private void initRewardVideoAd(Context context) {
         rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(context);
-        rewardedVideoAd.setUserId(String.valueOf(App.getInstance(context).getUser().getId()));
+        //rewardedVideoAd.setUserId(String.valueOf(App.getInstance(context).getUser().getId()));
         rewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
             public void onRewardedVideoAdLoaded() {
@@ -208,7 +207,13 @@ public class Admob {
     public void showRewardVideoAd(RewardAdListener listener) {
         rewardedVideoAdListener = listener;
         if(rewardedVideoAd.isLoaded()) {
-            rewardedVideoAd.show();
+            try {
+                rewardedVideoAd.show();
+                StaticMethods.log("showRewardVideoAd", "weCool");
+            } catch (Exception e) {
+                StaticMethods.log("showRewardVideoAd", "error", e.getMessage());
+                e.printStackTrace();
+            }
 
         } else {
             if(listener != null) {

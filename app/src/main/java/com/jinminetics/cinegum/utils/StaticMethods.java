@@ -351,4 +351,11 @@ public abstract class StaticMethods {
             ex.printStackTrace();
         }
     }
+
+    public static void goTo(final Context context, Class clazz, boolean finish) {
+        Activity activity = (Activity)context;
+        context.startActivity(new Intent(context, clazz));
+        activity.overridePendingTransition(R.anim.slide_in_from_right, R.anim.fade_out_scale);
+        if(finish) activity.finish();
+    }
 }

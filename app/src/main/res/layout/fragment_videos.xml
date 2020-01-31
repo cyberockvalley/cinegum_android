@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.jinminetics.views.JTextView
-        android:id="@+id/quickVideo"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@+id/toolbarLay" layout="@layout/toolbar" />
+    <RelativeLayout
+        android:id="@+id/details"
+        android:layout_below="@id/toolbarLay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        style="@style/Button.Edit"
-        android:padding="10dp"
-        android:text="Quick video"
-        android:textColor="@color/black"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp">
+            <ListView
+                android:layout_above="@id/footer"
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+                <include layout="@layout/footer_progress"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/empty_message"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_sad"/>
+
+            <com.jinminetics.views.JTextView
+                android:id="@+id/empty_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/conn_error"
+                android:textStyle="bold" />
+            <com.jinminetics.views.JTextView
+                android:id="@+id/try_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Button.Round.Accent"
+                android:layout_marginTop="5dp"
+                android:text="@string/try_again"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 </RelativeLayout>

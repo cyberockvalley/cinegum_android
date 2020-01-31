@@ -4,6 +4,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +21,7 @@ import com.jinminetics.views.JTextView;
 
 public class VideosFragment extends CustomFragment implements View.OnClickListener {
     private static final String TAG = VideosFragment.class.getSimpleName();
-    private JTextView mQuickVideo;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,9 +40,10 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
     @Override
     public void init() {
         super.init();
-        mQuickVideo = findViewById(R.id.quickVideo);
-        mQuickVideo.setOnClickListener(this);
-
+        mContext = getContext();
+        mActivity = getActivity();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
     }
 
     @Override
@@ -53,7 +57,7 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
 
             @Override
             public void onEmpty() {
-                StaticMethods.showSnackbar(mActivity, "No video available now. Try later.", Snackbar.LENGTH_LONG);
+                StaticMethods.showSnackbar(mActivity, "No WallAd available now. Try later.", Snackbar.LENGTH_LONG);
             }
         });
     }
@@ -78,7 +82,7 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
 
             @Override
             public void onEmpty() {
-
+                StaticMethods.showSnackbar(mActivity, "No video available now. Try later.", Snackbar.LENGTH_LONG);
             }
         });
     }
@@ -86,8 +90,6 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         v.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.image_click));
-        if(v == mQuickVideo) {
-            showRewardVideo();
-        }
+
     }
 }

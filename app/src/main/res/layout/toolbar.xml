@@ -27,7 +27,9 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="5dp"
                 app:srcCompat="@drawable/back_image"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="5dp" />
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="40dp"
@@ -36,14 +38,18 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="5dp"
                 app:srcCompat="@drawable/logo"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="5dp" />
             <com.jinminetics.views.JTextView
                 android:id="@+id/title"
                 android:layout_toRightOf="@id/backArrow"
+                android:layout_toEndOf="@id/backArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                style="@style/AppTextToolbarLogo"/>
+                style="@style/AppTextToolbarLogo"
+                android:layout_centerVertical="true"/>
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 </com.google.android.material.appbar.AppBarLayout>

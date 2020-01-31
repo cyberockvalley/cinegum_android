@@ -76,4 +76,5 @@
     <string name="total_payout">Total Payout</string>
     <string name="message_after_admob_reward"><![CDATA[You\'ve earned %d more coins. Click <b>Watch Again</b> to earn another %d]]></string>
     <string name="admob_videos_availability_message">Quick videos are available now. Click the Quick Video button to watch now</string>
+    <string name="menu_about_us">About Us</string>
 </resources>
