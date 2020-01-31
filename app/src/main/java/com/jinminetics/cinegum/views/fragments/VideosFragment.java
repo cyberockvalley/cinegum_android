@@ -11,17 +11,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.jinminetics.cinegum.R;
+import com.jinminetics.cinegum.models.Video;
 import com.jinminetics.cinegum.utils.Admob;
 import com.jinminetics.cinegum.utils.StaticMethods;
+import com.jinminetics.cinegum.views.adapters.VideoListAdapter;
 import com.jinminetics.views.JTextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class VideosFragment extends CustomFragment implements View.OnClickListener {
     private static final String TAG = VideosFragment.class.getSimpleName();
 
+    private JTextView mEmptyText, mTryAgain;
+    private ListView mListView;
+    private ProgressBar mFooterProgress;
+
+    private List<Video> playlist = new ArrayList<>();
+    private VideoListAdapter listAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +57,17 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
         mActivity = getActivity();
         Toolbar toolbar = findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+
+        mEmptyText = findViewById(R.id.empty_text);
+        mTryAgain = findViewById(R.id.try_again);
+        mListView = findViewById(R.id.listView);
+        mFooterProgress = findViewById(R.id.footer_progress);
+        listAdapter = new VideoListAdapter(mContext, R.layout.video_list_item, playlist);
+        loadVideos();
+    }
+
+    private void loadVideos() {
+
     }
 
     @Override
