@@ -34,13 +34,6 @@
         <item name="fontFace">@string/fontBillABong</item>
     </style>
 
-    <style name="PlayListItem">
-        <item name="android:layout_marginRight">8dp</item>
-    </style>
-    <style name="PlayListItem.Thumb">
-        <item name="android:layout_width"></item>
-    </style>
-
     <style name="ToolbarCenterText">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/h3</item>
@@ -166,5 +159,23 @@
 
     <style name="ShotViewItem.CommentBox">
         <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="PlayListItem">
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="PlayListItem.Thumb">
+        <item name="android:layout_width">@dimen/video_list_item_thumb_size_x</item>
+        <item name="android:layout_height">@dimen/video_list_item_thumb_size_y</item>
+    </style>
+
+    <style name="PlayListItem.Title">
+        <item name="android:textSize">@dimen/h4</item>
+    </style>
+
+    <style name="PlayListItem.Reward">
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
 </resources>

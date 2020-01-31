@@ -6,8 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
+import com.jinminetics.cinegum.R;
 import com.jinminetics.cinegum.models.Video;
+import com.jinminetics.views.JTextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -27,9 +31,14 @@ public class VideoListAdapter extends ArrayAdapter<Video> {
         inflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
     }
 
-    private static class ViewHolder {
+    static class ViewHolder {
+        ImageView thumb;
+        JTextView title;
+        JTextView reward;
         public ViewHolder(View view) {
-
+            thumb = view.findViewById(R.id.thumb);
+            title = view.findViewById(R.id.title);
+            reward = view.findViewById(R.id.reward);
         }
     }
     @NonNull
@@ -46,6 +55,12 @@ public class VideoListAdapter extends ArrayAdapter<Video> {
         }
 
         Video video = getItem(position);
+
+        Picasso.get().load(video.getThumb())
+                .into(viewHolder.thumb);
+
+        viewHolder.title.setText(video.getTitle());
+        viewHolder.reward.setText(String.format("+ %d coins", video.getReward()));
 
         return convertView;
     }

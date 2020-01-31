@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import com.jinminetics.cinegum.R;
 import com.jinminetics.cinegum.providers.App;
 import com.jinminetics.cinegum.utils.StaticMethods;
-import com.jinminetics.cinegum.views.activities.AboutUs;
+import com.jinminetics.cinegum.views.activities.AboutUsActivity;
 import com.jinminetics.cinegum.views.activities.MainActivity;
 
 public abstract class CustomFragment extends Fragment {
@@ -92,7 +92,7 @@ public abstract class CustomFragment extends Fragment {
                 StaticMethods.feedback(mContext);
                 return false;
             case R.id.aboutUs:
-                StaticMethods.goTo(mContext, AboutUs.class, false);
+                StaticMethods.goTo(mContext, AboutUsActivity.class, false);
                 return false;
             case R.id.contactUs:
                 StaticMethods.contactUs(mContext);

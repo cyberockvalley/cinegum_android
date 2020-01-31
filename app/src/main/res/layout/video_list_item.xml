@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        style="@style/PlayListItem.Thumb" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp">
+        <ImageView
+            android:id="@+id/thumb"
+            style="@style/PlayListItem.Thumb" />
+        <com.jinminetics.views.JTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:layout_toRightOf="@id/thumb"
+            android:layout_toEndOf="@id/thumb"
+            android:layout_toLeftOf="@id/rewardLay"
+            android:layout_toStartOf="@id/rewardLay"
+            android:textColor="@color/black"
+            style="@style/PlayListItem.Title" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/rewardLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/PlayListItem.Reward">
+            <com.jinminetics.views.JTextView
+                android:id="@+id/reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+2 coins"
+                android:textColor="@color/green"/>
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

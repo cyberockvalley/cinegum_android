@@ -11,15 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.jinminetics.cinegum.R;
+import com.jinminetics.cinegum.api.Constants;
 import com.jinminetics.cinegum.models.Video;
 import com.jinminetics.cinegum.utils.Admob;
 import com.jinminetics.cinegum.utils.StaticMethods;
+import com.jinminetics.cinegum.views.activities.YoutubeActivity;
 import com.jinminetics.cinegum.views.adapters.VideoListAdapter;
 import com.jinminetics.views.JTextView;
 
@@ -63,16 +66,27 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
         mListView = findViewById(R.id.listView);
         mFooterProgress = findViewById(R.id.footer_progress);
         listAdapter = new VideoListAdapter(mContext, R.layout.video_list_item, playlist);
+        mListView.setAdapter(listAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                StaticMethods.goTo(mContext, YoutubeActivity.class, false);
+            }
+        });
         loadVideos();
     }
 
     private void loadVideos() {
-
+        for(int i = 0; i < 20; i++) {
+            Video video = new Video(Constants.VIDEO_THUMB_PATH + "test.jpg", String.format("Video %d", i + 1), 2);
+            playlist.add(video);
+        }
+        listAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onResume() {
-        super.onResume();
+        super.onResume();/*
         Admob.getInstance(mContext).showWallAd(new Admob.AdListener() {
             @Override
             public void onAvailable() {
@@ -83,7 +97,7 @@ public class VideosFragment extends CustomFragment implements View.OnClickListen
             public void onEmpty() {
                 StaticMethods.showSnackbar(mActivity, "No WallAd available now. Try later.", Snackbar.LENGTH_LONG);
             }
-        });
+        });*/
     }
 
     private void showRewardVideo() {

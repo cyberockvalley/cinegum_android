@@ -31,7 +31,9 @@
         <activity android:name=".views.activities.LoginActivity" />
         <activity android:name=".views.activities.RegisterActivity" />
         <activity android:name=".views.activities.EditProfileActivity" />
-        <activity android:name=".views.activities.AboutUs" />
+        <activity android:name=".views.activities.AboutUsActivity" />
+        <activity android:name=".views.activities.YoutubeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout" />
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.jinminetics.cinegum"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,10 @@ android {
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/ASL2.0'
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 
@@ -66,5 +70,9 @@ dependencies {
     //multidex lib
     implementation "androidx.multidex:multidex:${multidex_version}"
 
+    //youtube
+    //implementation  files('libs/YouTubeAndroidPlayerApi.jar')
+    //youtube player alternative
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
 }
